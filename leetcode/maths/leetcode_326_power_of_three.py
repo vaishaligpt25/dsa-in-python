@@ -1,8 +1,6 @@
-def power_of_three(n: int) -> bool:
-    """
+# LeetCode-326: https://leetcode.com/problems/power-of-three
 
-    :rtype: object
-    """
+def power_of_three(n: int) -> bool:
     if n <= 0:
         return False
 
