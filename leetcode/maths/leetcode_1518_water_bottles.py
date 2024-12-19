@@ -1,3 +1,4 @@
+#leetcode -1518: https://leetcode.com/problems/water-bottles
 class Solution:
     def numWaterBottles(self, numFullBottles: int, numExchange: int) -> int:
         numBottlesDrunk: int = 0
