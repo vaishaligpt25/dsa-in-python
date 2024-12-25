@@ -4,10 +4,7 @@ from typing import Set, List
 
 class Solution:
     def _getDigits_string(self, num: int) -> Set[int]:
-        numAsString: str = str(num)
-        numDigitsAsListOfStrings: Set[str] = set(numAsString)
-        numDigitsAsListOfInts: Set[int] = {int(digit) for digit in numDigitsAsListOfStrings}
-        return numDigitsAsListOfInts
+        return {int(digit) for digit in str(num)}
 
     def _getDigits_numeric(self, num: int) -> Set[int]:
         digits: Set[int] = set()
