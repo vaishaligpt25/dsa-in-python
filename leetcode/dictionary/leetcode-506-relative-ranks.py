@@ -34,3 +34,15 @@ class Solution:
         sorted_scores: List[int] = sorted(scores, reverse=True)
         scores_with_ranks: Dict[int, int] = self._create_dict_with_index_as_value(my_list=sorted_scores)
         return self._build_ranks_list(scores=scores, scores_with_ranks=scores_with_ranks)
+
+class SolutionTest:
+    def test_relative_ranks(self) -> None:
+        soln : Solution = Solution()
+
+        assert soln.findRelativeRanks(scores= [10,3,8,9,4])== ["Gold Medal","5","Bronze Medal","Silver Medal","4"]
+        assert soln.findRelativeRanks(scores= [5,4,3,2,1])== ["Gold Medal","Silver Medal","Bronze Medal","4","5"]
+
+
+if __name__ == '__main__':
+    soln_test: SolutionTest = SolutionTest()
+    soln_test.test_relative_ranks()
