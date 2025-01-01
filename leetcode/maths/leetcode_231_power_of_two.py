@@ -1,3 +1,5 @@
+#leetcode-231: https://leetcode.com/problems/power-of-two
+
 def PowerOfTwo(n: int) -> bool:
     if n <= 0:
         return False
