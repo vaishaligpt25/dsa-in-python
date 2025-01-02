@@ -1,3 +1,4 @@
+#leetcode-96: https://leetcode.com/problems/sqrtx/description
 def mySqrt( n: int) -> int:
     if n <= 1:
         return n
