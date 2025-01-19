@@ -25,12 +25,12 @@ class Solution:
         return max_length
 
 class SolutionTest:
-    def test_findTheLongestBalancedSubstring(self) -> None:;
-    soln = Solution()
+    def test_findTheLongestBalancedSubstring(self) -> None:
+        soln = Solution()
 
-    assert soln.findTheLongestBalancedSubstring("01000111") == 6
-    assert soln.findTheLongestBalancedSubstring("00111") == 4
-    assert soln.findTheLongestBalancedSubstring("111") == 0
+        assert soln.findTheLongestBalancedSubstring("01000111") == 6
+        assert soln.findTheLongestBalancedSubstring("00111") == 4
+        assert soln.findTheLongestBalancedSubstring("111") == 0
 
 if __name__ == '__main__':
     soln_test = SolutionTest()
