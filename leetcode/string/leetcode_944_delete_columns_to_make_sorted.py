@@ -1,10 +1,11 @@
 # leetcode_944:- https://leetcode.com/problems/delete-columns-to-make-sorted
+from typing import List
 
 class Solution:
     def minDeletionSize(self, strs: List[str]) -> int:
         delete_count = 0
         # get length of each string( all have same length)
-        str_len = len(str[0])
+        str_len = len(strs[0])
 
         #check each column
         for column in range(str_len):
