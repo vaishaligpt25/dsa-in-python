@@ -104,6 +104,12 @@ class Solution:
         non_empty_words: List[str] = list(filter(lambda word: word != "", words))
         # non_empty_words: List[str] = [word for word in words if word != ""]
 
+        # equivalent to this for loop:
+        # result = []
+        # for word in words:
+        #     if word:  # (Empty strings are falsy in Python)
+        #         result.append(word)
+
         freq_dict: Dict[str, int] = self._build_frequency_dict_1a(my_words=non_empty_words, excluded_words=banned)
         print(f"freq_dict = {freq_dict}")
 
