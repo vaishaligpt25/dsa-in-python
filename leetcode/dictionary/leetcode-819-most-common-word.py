@@ -58,7 +58,7 @@ class Solution:
             max_value: int = max(max_value, value)
 
         # find key corresponding to max_value
-        for key, value in enumerate(my_dict):
+        for key, value in my_dict.items():
             if value == max_value:
                 return key
 
