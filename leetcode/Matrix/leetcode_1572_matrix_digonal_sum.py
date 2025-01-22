@@ -40,7 +40,6 @@ class Solution:
 
         return total
 
-
 class SolutionTest:
     def test_diagonalSum(self) -> None:
         soln: Solution = Solution()
@@ -53,6 +52,9 @@ class SolutionTest:
                   [1,1,1,1],
                   [1,1,1,1],
                   [1,1,1,1]]) == 8
+
+        assert soln.diagonalSum([[5]]) == 5
+
 
 if __name__ == '__main__':
     soln_test: SolutionTest = SolutionTest()
