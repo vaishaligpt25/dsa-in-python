@@ -47,6 +47,8 @@ class SolutionTest:
         assert soln._check_x_matrix_method_2([[2,0,0,1],[0,3,1,0],[0,5,2,0],[4,0,0,2]]) == True
         assert soln._check_x_matrix_method_2([[5,7,0],[0,3,1],[0,5,0]]) == False
         assert soln._check_x_matrix_method_2([[1,2], [3,1]]) == True
+        assert soln._check_x_matrix_method_2([[2,0,0,1],[0,3,1,0],[0,5,2,0],[4,0,0,2]]) == True
+
 
 
 if __name__ == '__main__':
