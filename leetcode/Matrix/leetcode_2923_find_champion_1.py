@@ -4,7 +4,7 @@ from typing import List
 
 class Solution:
     def findChampion(self, grid: List[List[int]]) -> int:
-        return None
+        return self.method_2(grid=grid)
 
     def method_1(self, grid: List[List[int]]) -> int:
         n: int = len(grid)
@@ -32,8 +32,9 @@ class Solution:
 class SolutionTest:
     def findChampion(self) -> None:
         soln: Solution = Solution()
-        assert soln.method_2(grid=[[0,1],[0,0]]) == 0
+        assert soln.findChampion(grid=[[0,1],[0,0]]) == 0
         assert soln.method_2(grid = [[0,0,1],[1,0,1],[0,0,0]]) == 1
+
 
 
 if __name__ == '__main__':
