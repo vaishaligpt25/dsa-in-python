@@ -2,29 +2,39 @@ from typing import List, Dict
 
 class Solution:
     def isPossibleToRearrange(self, s: str, t: str, k: int) -> bool:
-        slice_list_s: List[str] = self.slicing_of_string(s=s, k=k)
-        slice_list_t: List[str] = self.slicing_of_string(s=t, k= k)
+        slice_list_s: List[str] = self.slicing_of_string(my_string=s, slice_size=k)
+        slice_list_t: List[str] = self.slicing_of_string(my_string=t, slice_size= k)
 
-        s_dict: Dict[str, int] = self.create_dict_of_slice_list_s(slice_list_s= slice_list_s)
-        t_dict: Dict[str, int] = self.create_dict_of_slice_list_s(slice_list_s= slice_list_t)
+        s_dict: Dict[str, int] = self.create_freq_map_of_slices(slice_list_s= slice_list_s)
+        t_dict: Dict[str, int] = self.create_freq_map_of_slices(slice_list_s= slice_list_t)
 
         return s_dict == t_dict
 
 
-    def slicing_of_string(self, s: str, k: int) -> List[str]:
-        slice_list_s: List[str] = []
-        for i in range(0, len(s), k):
-             substring = s[i: (i + k)]
-             slice_list_s.append(substring)
-        return slice_list_s
+    def slicing_of_string(self, my_string: str, slice_size: int) -> List[str]:
+        slices: List[str] = []
+        for i in range(0, len(my_string), slice_size):
+             substring = my_string[i: (i + slice_size)]
+             slices.append(substring)
+        return slices
 
-    def create_dict_of_slice_list_s(self, slice_list_s: List[str]) -> Dict[str, int]:
+    def slicing_of_string_2(self, my_string: str, slice_size: int) -> List[str]:
+        return [my_string[i: (i + slice_size)] for i in range(0, len(my_string), slice_size)]
+
+    def create_freq_map_of_slices(self, slice_list_s: List[str]) -> Dict[str, int]:
         s_dict: Dict[str, int] = {}
         for i in range(0, len(slice_list_s)):
             crr_slice: str = slice_list_s[i]
             crr_freq: int = s_dict.get(crr_slice, 0)
             s_dict[crr_slice]: int = crr_freq + 1
         return s_dict
+
+    def create_freq_map_of_slices_2(self, slices: List[str]) -> Dict[str, int]:
+        frequencies: Dict[str, int] = {}
+        for crr_slice in slices:
+            crr_freq: int = frequencies.get(crr_slice, 0)
+            frequencies[crr_slice]: int = crr_freq + 1
+        return frequencies
 
 
 
