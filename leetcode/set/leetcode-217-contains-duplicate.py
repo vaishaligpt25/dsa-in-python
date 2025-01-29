@@ -1,3 +1,5 @@
+# leetcode_217:-https://leetcode.com/problems/contains-duplicate/description/
+
 from typing import List, Dict, Set, Optional
 
 
@@ -30,6 +32,7 @@ class Solution:
                 return True
             # add num in dictionary for checking in future
             my_dict[num]: bool = True
+           #my_dict.add(num)
         return False
 
     # ------ method-3: set ------
