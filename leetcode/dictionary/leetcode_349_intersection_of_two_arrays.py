@@ -19,6 +19,20 @@ class Solution:
               nums1_set.remove(n)
         return result
 
+    def intersection2(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        num_map: Dict[int, int] = {}
+        result: List[int] = []
+
+        #first populate the map with the nums1
+        for num in nums1:
+            num_map[num] = num_map.get(num, 0) + 1
+
+        for num in nums2:
+            if num in num_map:
+                result.append(num)
+                del num_map[num]
+        return result
+
 
 class SolutonTest:
     def check_intersection(self) -> None:
@@ -27,9 +41,13 @@ class SolutonTest:
         # assert set(soln.intersection(nums1 = [4,9,5], nums2 = [9,4,9,8,4])) == {4, 9}
         # assert soln.intersection(nums1 = [4,9,5], nums2 = [1, 2, 3]) == []
 
-        assert soln.intersection1(nums1=[1, 2, 2, 1], nums2=[2, 2]) == [2]
-        assert set(soln.intersection1(nums1=[4, 9, 5], nums2=[9, 4, 9, 8, 4])) == {4, 9}
-        assert soln.intersection1(nums1=[4, 9, 5], nums2=[1, 2, 3]) == []
+        # assert soln.intersection1(nums1=[1, 2, 2, 1], nums2=[2, 2]) == [2]
+        # assert set(soln.intersection1(nums1=[4, 9, 5], nums2=[9, 4, 9, 8, 4])) == {4, 9}
+        # assert soln.intersection1(nums1=[4, 9, 5], nums2=[1, 2, 3]) == []
+
+        assert soln.intersection2(nums1=[1, 2, 2, 1], nums2=[2, 2]) == [2]
+        #assert soln.intersection2(nums1=[4, 9, 5], nums2=[9, 4, 9, 8, 4]) == [4, 9]
+        assert soln.intersection2(nums1=[4, 9, 5], nums2=[1, 2, 3]) == []
 
 
 if __name__ == '__main__':
