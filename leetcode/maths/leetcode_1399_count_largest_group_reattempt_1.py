@@ -39,6 +39,14 @@ class Solution:
     def _find_frequency_of_value(self, my_dict: Dict[int, int], my_value: int) -> int:
         return len([value for value in my_dict.values() if value == my_value])
 
+    # using traditional loop
+    def _find_frequency_of_value1(self, my_dict: Dict[int, int], my_value: int) -> int:
+        count = 0
+        for value in my_dict.values():
+            if value == my_value:
+                count += 1
+        return count
+
     def countLargestGroup(self, n: int) -> int:
         list_of_integers_1_to_n: List[int] = self._build_list_of_integers_1_to_n(n=n)
         list_of_sum_of_digits: List[int] = self._convert_to_sum_of_digits(my_list=list_of_integers_1_to_n)
