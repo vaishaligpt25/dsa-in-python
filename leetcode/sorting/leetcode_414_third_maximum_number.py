@@ -5,7 +5,7 @@ from typing import List, Set
 
 class Solution:
     def thirdMax(self, nums: List[int]) -> int:
-        nums_sorted: List[int] = sorted(set(nums), reverse= True)
+        nums_sorted: List[int] = sorted(set(nums), reverse=True)
 
         # If less than 3 unique numbers, return maximum
         if len(nums_sorted) < 3:
@@ -29,8 +29,8 @@ def thirdMax1(self, nums: List[int]) -> int:
 class SolutionTest:
     def max_number(self) -> None:
         soln: Solution = Solution()
-        assert soln.thirdMax(nums = [3,2,1]) == 1
-        assert soln.thirdMax(nums = [1,2]) == 2
+        assert soln.thirdMax(nums=[3, 2, 1]) == 1
+        assert soln.thirdMax(nums=[1, 2]) == 2
 
 
 if __name__ == '__main__':
