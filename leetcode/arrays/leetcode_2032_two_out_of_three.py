@@ -2,9 +2,10 @@
 
 from typing import List
 
+
 class Solution:
     def twoOutOfThree(self, nums1: List[int], nums2: List[int], nums3: List[int]) -> List[int]:
-    # Convert lists to sets for efficient lookup
+        # Convert lists to sets for efficient lookup
         set1 = set(nums1)
         set2 = set(nums2)
         set3 = set(nums3)
@@ -23,4 +24,3 @@ class Solution:
                 result.add(num)
 
         return list(result)
-
