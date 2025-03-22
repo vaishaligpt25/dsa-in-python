@@ -35,7 +35,6 @@ class Solution:
         return sorted(zipped_list, reverse=True)
 
     def _calculate_max_sum(
-
             self,
             value_labels: List[Tuple[int, int]],
             num_values_to_pick: int,
