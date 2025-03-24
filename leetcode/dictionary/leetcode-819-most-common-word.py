@@ -35,7 +35,8 @@ class Solution:
         # return freq_dict
 
         # method-2: remove banned words from dictionary
-        filtered_freq_dict: Dict[str, int] = {key: value for key, value in freq_dict.items() if key not in excluded_words}
+        filtered_freq_dict: Dict[str, int] = {key: value for key, value in freq_dict.items() if
+                                              key not in excluded_words}
         return filtered_freq_dict
 
     # advanced (need not learn)
@@ -43,7 +44,8 @@ class Solution:
         freq_dict: Dict[str, int] = {word: my_words.count(word) for word in set(my_words)}
 
         # remove banned words from dictionary
-        filtered_freq_dict: Dict[str, int] = {key: value for key, value in freq_dict.items() if key not in excluded_words}
+        filtered_freq_dict: Dict[str, int] = {key: value for key, value in freq_dict.items() if
+                                              key not in excluded_words}
         return filtered_freq_dict
 
     # advanced (need not learn)
@@ -94,7 +96,8 @@ class Solution:
         return max(my_swapped_tuples)[1]
 
     def _get_max_value_key_2c(self, my_dict: Dict[str, int]) -> str:
-        my_swapped_tuples: List[Tuple[int, str]] = list(map(lambda my_tuple: tuple(reversed(my_tuple)), my_dict.items()))
+        my_swapped_tuples: List[Tuple[int, str]] = list(
+            map(lambda my_tuple: tuple(reversed(my_tuple)), my_dict.items()))
         if not my_swapped_tuples:
             return ""
         return max(my_swapped_tuples)[1]
