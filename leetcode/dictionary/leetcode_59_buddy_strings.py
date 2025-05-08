@@ -13,7 +13,7 @@ class Solution:
             return len(set(s)) < len(s)
 
         # Find positions where characters differ
-        differences = []
+        differences= []
         for i in range(len(s)):
             if s[i] != goal[i]:
                 differences.append(i)
