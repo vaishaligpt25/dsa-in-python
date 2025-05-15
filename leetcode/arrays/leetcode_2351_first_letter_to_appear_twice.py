@@ -3,7 +3,7 @@
 
 class Solution:
     def repeatedCharacter(self, s: str) -> str:
-        s_map = {}
+        s_map: dict[str, int] = {}
         for char in s:
             if char in s_map:
                 return char
@@ -11,12 +11,12 @@ class Solution:
         return ""
 
     def repeatedCharacter1(self, s: str) -> str:
-       seen = set()
-       for char in s:
-           if char in seen:
-               return char
-           seen.add(char)
-       return ""
+        seen: set[str] = set()
+        for char in s:
+            if char in seen:
+                return char
+            seen.add(char)
+        return ""
 
 
 class SolutionTest:
@@ -24,9 +24,3 @@ class SolutionTest:
         soln: Solution = Solution()
         assert soln.repeatedCharacter(s="abccbaacz") == "c"
         assert soln.repeatedCharacter(s="abcdd") == "d"
-
-
-
-
-
-
