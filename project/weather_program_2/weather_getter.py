@@ -14,10 +14,8 @@ class WeatherGetter:
 
     def show_weather_for_city(self, city: str) -> None:
         weather_data: Dict[str, Any] = self.open_weather_map_accessor.get_weather_data_for_city(city=city)
-        print(json.dumps(weather_data, indent=4))
+        print(json.dumps(weather_data, indent=2))
 
-if __name__ == "__main__":
-    weather_getter: WeatherGetter = WeatherGetter()
-
-    city: str = input("Enter a city: ")
-    weather_getter.show_weather_for_city(city=city)
+    def show_weather_for_lat_long(self, lat: float, long: float) -> None:
+        weather_data: Dict[str, Any] = self.open_weather_map_accessor.get_weather_data_for_lat_long(lat=lat, long=long)
+        print(json.dumps(weather_data, indent=2))
