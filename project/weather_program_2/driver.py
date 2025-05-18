@@ -4,6 +4,8 @@ CHOICE_GET_WEATHER_FOR_CITY: int = 1
 CHOICE_GET_WEATHER_FOR_LAT_LONG: int = 2
 CHOICE_EXIT: int = 3
 
+# to run this program in IntelliJ / PyCharm, we need to 'Edit Configurations' and set the "API_KEY" environment variable
+
 def get_choice() -> int:
     print("==============================")
     print("==============================")
@@ -29,6 +31,7 @@ def get_weather_for_lat_long(weather_getter: WeatherGetter) -> None:
 
 if __name__ == "__main__":
     weather_getter: WeatherGetter = WeatherGetter()
+
     choice: int = get_choice()
     while choice != CHOICE_EXIT:
         if choice == CHOICE_GET_WEATHER_FOR_CITY:
@@ -37,4 +40,5 @@ if __name__ == "__main__":
             get_weather_for_lat_long(weather_getter)
         else:
             print("Invalid choice")
+
         choice: int = get_choice()

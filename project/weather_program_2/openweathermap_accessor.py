@@ -5,6 +5,7 @@ import requests
 
 class OpenWeatherMapAccessor:
 
+    # to run this program in IntelliJ / PyCharm, we need to 'Edit Configurations' and set the "API_KEY" environment variable
     API_KEY: str = os.getenv("API_KEY")
     CURRENT_WEATHER_API_BASE_URL: str = "http://api.openweathermap.org/data/2.5/weather"
 
@@ -13,7 +14,7 @@ class OpenWeatherMapAccessor:
             "q": city,
             "appid": self.API_KEY
         }
-        return self._get_weather_data(params)
+        return self._get_weather_data(params=params)
 
     def get_weather_data_for_lat_long(self, lat: float, long: float) -> Dict[str, Any]:
         params: Dict[str, str] = {
@@ -21,7 +22,7 @@ class OpenWeatherMapAccessor:
             "lon": str(long),
             "appid": self.API_KEY
         }
-        return self._get_weather_data(params)
+        return self._get_weather_data(params=params)
 
     def _get_weather_data(self, params: Dict[str, str]) -> Dict[str, Any]:
         response: requests.models.Response = requests.get(self.CURRENT_WEATHER_API_BASE_URL, params=params)
